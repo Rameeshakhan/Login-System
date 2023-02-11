@@ -1,55 +1,23 @@
-import { useState } from "react"
-import './App.css';
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+import Dashboard from "./pages/Dashboard"
+import Login from "./pages/login"
+import Register from "./pages/Register"
 
-function App() {
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const handleSumit = async (event) => {
-    event.preventDefault()
-    const response = await fetch("http://localhost:2000/api/register", {
-      method: "POST",
-      headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          password,
-        })
-    })
-
-    const data = async () => {
-      await response.json()
-    }
-    console.log(data)
-  }
-  return (
-    <div>
-      <h1>Register</h1>
-      <form>
-        <input
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          type="text"
-          placeholder="Enter name"
-        /><br />
-        <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          type="text"
-          placeholder="Enter mail"
-        /><br />
-        <input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          type="text"
-          placeholder="Enter Password"
-        /><br />
-        <button onClick={handleSumit}>Submit</button>
-      </form>
-    </div>
-  );
+const App = () => {
+    return (
+        <div>
+            <BrowserRouter>
+                <Routes>
+                <Route path="/login" element={<Login />}/>
+                <Route path="/register" element={<Register />}/>
+                <Route path="/dashboard" element={<Dashboard />}/>
+                </Routes>
+            </BrowserRouter>
+        </div>
+    )
 }
 
-export default App;
+export default App
+
+
+
