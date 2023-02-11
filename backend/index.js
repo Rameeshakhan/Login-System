@@ -40,7 +40,7 @@ app.post("/api/login", async (req, res) => {
         email: req.body.email,
         password: req.body.password
     })
-    if(user){
+    if(User){
         res.json({ status: "ok" , user: true})
     } else{
         res.json({ status: "error", error: "User not found" })
