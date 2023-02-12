@@ -1,0 +1,64 @@
+body{
+    margin: 50px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.left{
+    padding:50px;
+}
+.heading{
+    font-size: 45px;
+    font-style: sans serif;
+}
+
+.btn {
+    background-color: blueviolet;
+    color: white;
+    padding: 10px;
+    font-weight: 700;
+    font-style: sans serif;
+    border-radius: 8px;
+}
+
+.btn:hover {
+    color:black
+}
+.text{
+    font-size: 14px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.head{
+    color:blueviolet;
+}
+
+.register-form{
+    background-color: white;
+    border-radius: 5px;
+    width: 320px;
+    height: 370px;
+    border: 1px solid rgb(88, 87, 87);
+    padding:20px;
+    margin-top: 80px;
+    align-items: center;
+}
+
+.dashboard{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+}
+.dash{
+    border-radius: 30px;
+    padding: 10px 20px 10px 20px;
+    margin-top: 40px;
+    margin-left: 550px;
+}
+
+.dash:hover {
+    color:white;
+}

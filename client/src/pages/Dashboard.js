@@ -1,10 +1,14 @@
 import React from 'react'
-// import User from "/backend/index.js"
+import dashboard from '../assets/images/dashboard.png'
+
 const Dashboard = () => {
   return (
-    <div>
-        <h1> Welcome To the Dashboard </h1>
+   <>
+    <div className='dashboard'>
+          <img src={dashboard} alt="BigCo Inc. logo"/>
     </div>
+    <button className='btn dash'>About US</button>
+   </>
   )
 }
 
