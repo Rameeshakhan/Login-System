@@ -3,6 +3,7 @@ const app = express();
 const cors = require("cors")
 const mongoose = require("mongoose")
 const User = require("./model/user.model")
+// const jwt = require("jsonwebtoken")
 
 require("dotenv").config();
 const URL = process.env.DATABASE;
@@ -22,7 +23,6 @@ mongoose.connect(URL)
 app.post('/api/register', async (req, res) => {
 	console.log(req.body)
 	try {
-		// const newPassword = await bcrypt.hash(req.body.password, 10)
 		await User.create({
 			name: req.body.name,
 			email: req.body.email,
@@ -41,7 +41,7 @@ app.post("/api/login", async (req, res) => {
         password: req.body.password
     })
     if(User){
-        res.json({ status: "ok" , user: true})
+        res.json({ status: "ok" , user: User})
     } else{
         res.json({ status: "error", error: "User not found" })
     }
