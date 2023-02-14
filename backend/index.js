@@ -3,7 +3,7 @@ const app = express();
 const cors = require("cors")
 const mongoose = require("mongoose")
 const User = require("./model/user.model")
-// const jwt = require("jsonwebtoken")
+
 
 require("dotenv").config();
 const URL = process.env.DATABASE;
@@ -19,7 +19,7 @@ mongoose.connect(URL)
         console.log('Error connecting to MongoDB:', error);
     });
 
-//create user route
+//create user register route
 app.post('/api/register', async (req, res) => {
 	console.log(req.body)
 	try {
